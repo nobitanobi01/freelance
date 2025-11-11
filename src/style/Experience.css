@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.experience-section {
+    padding: 60px 20px;
+    background-color: #f8f7f7;
+    position: relative;
+}
+
+.experience-heading {
+    margin-left: 55px;
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    color: #333;
+    font-family: "Nunito", sans-serif;
+
+}
+
+/* Timeline container */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Vertical line */
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background-color: #007BFF;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Timeline item */
+.timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    width: 50%;
+}
+
+/* Left & right positions */
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+/* Content box */
+.content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Nunito", sans-serif;
+
+}
+
+.content h3 {
+    color: #007BFF;
+    margin-bottom: 5px;
+}
+
+.content h4 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.duration {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Connector dot */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    right: -9px;
+    background-color: #007BFF;
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item.right::before {
+    left: -9px;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+/* When scrolled into view */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth delay stagger */
+.timeline-item {
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
+/* Responsive for mobile */
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 25px;
+    }
+
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .timeline-item::before {
+        left: 11px;
+    }
+
+    .timeline-item.right::before {
+        left: 11px;
+    }
+
+    .experience-heading {
+
+        margin-left: 80px;
+    }
+}

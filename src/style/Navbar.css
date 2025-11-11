@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+/* Navbar Layout */
+.navbar {
+  background-color: #f8f7f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: relative;
+  font-family: "Elms Sans", sans-serif;
+  z-index: 1000;
+}
+
+/* Left Section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-profile-pic {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.navbar-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.navbar-title:hover {
+  transition: transform 0.4s ease-in-out;
+  transform: scale(1.1);
+
+}
+
+.navbar-subtitle {
+  font-size: 18px;
+  color: #007BFF;
+  margin-top: 20px;
+  margin-left: 5px;
+  font-weight: 600;
+}
+
+/* Right Section Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Nunito", sans-serif;
+
+}
+
+.navbar-links a:hover {
+  color: #007BFF;
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+/* Add clean vertical dividers */
+.navbar-links a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -13px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 18px;
+  background-color: #000;
+}
+
+/* Toggle Button (Hamburger) */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.bar {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  transition: 0.3s ease;
+}
+
+/* Cross animation */
+.navbar-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Full-Screen Menu */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .navbar-subtitle {
+    display: none;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-links.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.97);
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+  }
+
+  .navbar-links a {
+    font-size: 22px;
+  }
+
+  .navbar-links a:not(:last-child)::after {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+}

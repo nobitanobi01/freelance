@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.footer {
+    background-color: #f8f7f7;
+  padding: 40px 60px;
+  text-align: left;
+  font-family: "Nunito", sans-serif;
+  color: #000;
+}
+
+.footer-line {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.footer-section p {
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-left: 0px;
+  cursor: pointer;
+}
+
+.footer-icons a {
+  color: #000;
+  font-size: 20px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.footer-icons a:hover {
+  color: #0077b5;
+  /* LinkedIn blue */
+}
+
+.footer-bottom {
+  font-size: 14px;
+  color: #555;
+}
+
+.footer-bottom strong {
+  font-weight: 600;
+  color: #0069d8;
+
+}
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
